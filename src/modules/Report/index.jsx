@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Select from 'components/Select';
-// import ReportChart from 'components/ReportChart';
 import HighChart from 'components/HighChart';
 import products from 'data/products';
 import './Report.css';
@@ -155,9 +154,6 @@ class Report extends Component {
           </div>
         </div>
         <div className="Report-Body">
-          {/* <ReportChart
-            options={options}
-          /> */}
           <HighChart options={chartOptions} />
         </div>
       </div>
