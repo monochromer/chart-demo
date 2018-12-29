@@ -1,0 +1,27 @@
+.Nav {
+  display: flex;
+}
+
+  .Nav-Link {
+    position: relative;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    padding: 1.25em 1.5em;
+    border-bottom: 2px solid transparent;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+  }
+
+    .Nav-Link:hover {
+      background-color: hsl(205, 100%, 96%);
+    }
+
+    .Nav-Link_active {
+      border-bottom-color: currentColor;
+    }

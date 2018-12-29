@@ -1,0 +1,42 @@
+.Report {
+  flex: 1 1 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+  .Report-Head {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .Report-Title,
+  .Report-Tools {
+    padding: 0.25rem;
+  }
+
+  .Report-Title {
+    margin: 0;
+  }
+
+  .Report-Tools {
+    display: grid;
+    grid-column-gap: 0.5rem;
+    grid-auto-flow: column;
+  }
+
+  .Report-Body {
+    flex: 1 1 0%;
+    display: flex;
+    overflow: auto;
+    padding: 0 1.5rem 1rem;
+  }
+
+    .Report-Body > * {
+      flex: 1 1 0%;
+      min-width: 0;
+      min-height: 0;
+    }
