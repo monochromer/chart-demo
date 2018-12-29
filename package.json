@@ -2,6 +2,7 @@
   "name": "demo-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://monochromer.github.io/chart-demo/",
   "dependencies": {
     "highcharts": "^7.0.1",
     "highcharts-react-official": "^2.0.0",
