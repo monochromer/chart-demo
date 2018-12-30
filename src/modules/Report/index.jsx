@@ -9,13 +9,27 @@ class Report extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      year: 2015,
+      year: null,
       type: 'GOODS',
       products
     };
 
-    this.onChangeYear = this.onChangeYear.bind(this);
-    this.onChangeType = this.onChangeType.bind(this);
+    [
+      'onChangeYear',
+      'onChangeType',
+      'getYears',
+      'getMaxYear'
+    ].forEach(method => this[method] = this[method].bind(this));
+  }
+
+  getYears() {
+    const years = this.state.products.map(p => p.year);
+    return [...new Set(years)];
+  }
+
+  getMaxYear() {
+    const years = this.getYears();
+    return Math.max(...years);
   }
 
   onChangeYear(event) {
@@ -122,11 +136,12 @@ class Report extends Component {
 
   render() {
     const {
-      state: { year, type, products },
-      onChangeYear, onChangeType, getChartData
+      onChangeYear, onChangeType, getChartData,
+      getYears, getMaxYear
     } = this;
-
-    const chartOptions = getChartData(products, type, year);
+    const { year, type, products } = this.state;
+    const currentYear = year || getMaxYear();
+    const chartOptions = getChartData(products, type, currentYear);
 
     return (
       <div className="Report">
@@ -134,11 +149,11 @@ class Report extends Component {
           <h2 className="Report-Title">Report</h2>
           <div className="Report-Tools">
             <Select
-              options={[2015, 2016].map(year => ({
+              options={getYears().map(year => ({
                 value: year,
                 text: year
               }))}
-              value={year}
+              value={currentYear}
               name={"year"}
               onChange={onChangeYear}
             />
