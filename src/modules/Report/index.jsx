@@ -14,12 +14,8 @@ class Report extends Component {
       products
     };
 
-    [
-      'onChangeYear',
-      'onChangeType',
-      'getYears',
-      'getMaxYear'
-    ].forEach(method => this[method] = this[method].bind(this));
+    ['onChangeYear', 'onChangeType']
+      .forEach(method => this[method] = this[method].bind(this));
   }
 
   getYears() {
@@ -135,13 +131,9 @@ class Report extends Component {
   }
 
   render() {
-    const {
-      onChangeYear, onChangeType, getChartData,
-      getYears, getMaxYear
-    } = this;
     const { year, type, products } = this.state;
-    const currentYear = year || getMaxYear();
-    const chartOptions = getChartData(products, type, currentYear);
+    const currentYear = year || this.getMaxYear();
+    const chartOptions = this.getChartData(products, type, currentYear);
 
     return (
       <div className="Report">
@@ -149,13 +141,13 @@ class Report extends Component {
           <h2 className="Report-Title">Report</h2>
           <div className="Report-Tools">
             <Select
-              options={getYears().map(year => ({
+              options={this.getYears().map(year => ({
                 value: year,
                 text: year
               }))}
               value={currentYear}
               name={"year"}
-              onChange={onChangeYear}
+              onChange={this.onChangeYear}
             />
             <Select
               options={[
@@ -164,7 +156,7 @@ class Report extends Component {
               ]}
               value={type}
               name="type"
-              onChange={onChangeType}
+              onChange={this.onChangeType}
             />
           </div>
         </div>
