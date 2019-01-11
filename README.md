@@ -6,4 +6,4 @@
     * Для разработки запустить `npm start`
     * Для сборки запустить `npm run build`
 
-Демо доступно по [адресу](https://monochromer.github.io/chart-demo)
+Демо доступно по [адресу](https://monochromer.github.io/chart-demo/)
