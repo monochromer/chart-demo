@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://monochromer.github.io/chart-demo/",
   "dependencies": {
-    "highcharts": "^7.0.1",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^2.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
